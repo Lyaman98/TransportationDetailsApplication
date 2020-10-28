@@ -1,0 +1,102 @@
+<div data-role="dynamic-fields">
+    <div class="form-inline">
+        <div class="form-group">
+            <input type="button" class="btn btn-primary"
+                   data-toggle="collapse" data-target="#collapseExample"
+                   aria-expanded="false" aria-controls="collapseExample"
+                   value="#1 Address information">
+        </div>
+        <button class="btn btn-danger" data-role="remove">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <button class="btn btn-success" id='addButton' data-role="add">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div> <!-- /div.form-inline -->
+</div>
+
+<div class="collapse" id="collapseExample">
+
+    <div class="form-group mt-3">
+        <label>Loading address</label>
+        <input class="form-control" type="text" th:field="*{productList[0].loadingAddress.street}">
+    </div>
+    <div class="form-inline">
+        <div class="form-group mr-3">
+            <label>Loading date</label>
+            <input class="form-control" type="date"  th:field="*{productList[0].loadingDateTime}">
+        </div>
+        <div class="form-group ">
+            <label>Loading time</label>
+            <input class="form-control" type="time">
+        </div>
+    </div>
+    <div class="form-inline mt-3">
+        <div class="form-group mr-3">
+            <label>Delivery Street</label>
+            <input class="form-control" type="text"  th:field="*{productList[0].deliveryAddress.street}">
+        </div>
+        <div class="form-group ">
+            <label>Delivery Street Number</label>
+            <input class="form-control" type="number" th:field="*{productList[0].deliveryAddress.streetNumber}">
+        </div>
+    </div>
+    <div class="form-inline">
+        <div class="form-group mr-3">
+            <label>Delivery City/District</label>
+            <input class="form-control" type="text" th:field="*{productList[0].deliveryAddress.city}">
+        </div>
+        <div class="form-group">
+            <label>Delivery Country</label>
+            <input class="form-control" type="text" th:field="*{productList[0].deliveryAddress.country}">
+        </div>
+    </div>
+    <div class="form-inline">
+        <div class="form-group mr-3">
+            <label>Amount</label>
+            <input class="form-control" type="number" th:field="*{productList[0].amount}">
+        </div>
+        <div class="form-group ">
+            <label>Way of transportation</label>
+            <input class="form-control" type="text" th:field="*{productList[0].transportationWays}">
+        </div>
+    </div>
+
+    <div class="form-inline">
+        <div class="form-group mr-3">
+            <label>Delivery date</label>
+            <input class="form-control" type="date" th:field="*{productList[0].deliveryDateTime}">
+        </div>
+        <div class="form-group ">
+            <label>Delivery time</label>
+            <input class="form-control" type="time">
+        </div>
+    </div>
+    <div class="form-group ">
+        <label>Remarks</label>
+        <textarea class="form-control"></textarea>
+    </div>
+    <div class="form-group mt-3">
+        <label>Service Provider</label>
+        <input class="form-control" disabled type="text">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" disabled type="email">
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input class="form-control" disabled type="text">
+    </div>
+    <div class="form-group">
+        <label>Driver's Name</label>
+        <input class="form-control" disabled type="text">
+    </div>
+    <div class="form-group">
+        <label>Driver's Phone</label>
+        <input class="form-control" disabled type="text">
+    </div>
+
+</div>
+
+</form>

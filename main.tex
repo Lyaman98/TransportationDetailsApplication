@@ -1,0 +1,1272 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{enumitem}
+\graphicspath{ {./images/} }
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{apacite}
+\usepackage{textcomp}
+\usepackage[style=authoryear]{biblatex}
+\setlength\bibitemsep{\baselineskip}
+\bibliography{References.bib}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage{caption,subcaption}
+\usepackage[T1]{fontenc}
+\setitemize{fullwidth}
+\usepackage[a4paper,top=1cm,right=1cm,left=1cm,bottom=1cm]{geometry}
+
+\begin{document}
+\begin{titlepage}
+  \sf
+  \hrule
+  {
+  ~
+  \vskip1em
+  \Huge
+  ASSIGNMENT COVERSHEET
+  \vskip1ex
+  }
+  \hrule
+  \vskip1em
+
+  \noindent
+  \begin{tabular}{|p{.4775\textwidth}|p{.4775\textwidth}|}
+    \hline
+    \multicolumn{2}{|p{.90\textwidth}|}{\vskip1ex Student Name: Laman Aghabayova\vskip1ex}\\
+    \hline
+    \multicolumn{2}{|p{.90\textwidth}|}{\vskip1ex Class: Rapid Applications Development \vskip1ex}\\
+    \hline
+    \multicolumn{2}{|p{.90\textwidth}|}{\vskip1ex Assignment: Application Modelling\vskip1ex}\\
+    \hline
+    \vskip1ex Lecturer: Dominik Pantůček\vskip1ex & \vskip1ex Semester: 1904\vskip1ex \\
+    \hline
+    \vskip1ex Due Date: 2019-11-11\vskip1ex & \vskip1ex Actual Submission Date: 2019-11-11\vskip1ex \\
+    \hline
+  \end{tabular}
+
+  \vskip1em
+
+  \noindent
+  \begin{tabular}{|p{.4775\textwidth}|p{.05\textwidth}|p{.405\textwidth}|}
+    \hline
+    \vskip1pt
+    \textbf{Evidence Produced (List separate items)}\vskip1pt &
+    \multicolumn{2}{|p{.40\textwidth}|}{\vskip1pt\textbf{Location (Choose one)}\vskip1pt} \\
+    \hline
+    & \vskip1ex X & \vskip1ex Uploaded to the Learning Center (Moodle)\vskip1pt \\
+    \cline{2-3}
+    & & \vskip1ex Submitted to reception\vskip1pt \\
+    \hline
+    \multicolumn{3}{|p{.90\textwidth}|}{\vskip1pt
+      \emph{Note: Email submissions to the lecturer are not valid.}\vskip1pt}\\
+    \hline
+  \end{tabular}
+
+  \vskip1em
+
+  \noindent
+  \begin{tabular}{|p{.3775\textwidth}|p{.5775\textwidth}|}
+    \hline
+    \multicolumn{2}{|p{.9225\textwidth}|}{\vskip1pt\textbf{Student Declaration: }\vskip1pt}\\
+    \hline
+    \multicolumn{2}{|p{.9225\textwidth}|}{\vskip1pt
+      \textbf{I declare that the work contained in this assignment
+        was researched and prepared by me, except where
+        acknowledgement of sources is made.  I understand that the
+        college can and will test any work submitted by me for
+        plagiarism.}
+      
+      \textbf{Note: } The attachment of this statement on any
+      electronically submitted assignments will be deemed to have the
+      same authority as a signed statement
+      
+      \vskip1pt}\\
+    \hline
+    \vskip1pt
+    Date: 2019-11-11\vskip1pt &
+    \vskip1pt Student Signature: Laman Aghabayova\vskip1pt \\
+    \hline
+  \end{tabular}
+
+  \vskip1em
+
+  \noindent
+  A separate feedback sheet will be returned to you after your work
+  has been graded.
+
+  \noindent
+  Refer to your Student Manual for the Appeals Procedure if you have
+  concerns about the grading decision.
+
+  \vskip1em
+
+  \noindent
+  \begin{tabular}{|p{.9775\textwidth}|}
+    \hline
+    \textbf{Student Comment (Optional)} \\
+    \hline
+    Was the task clear? If not, how could it be improved? \\
+    \hline
+    Was there sufficient time to complete the task? If not, how much time should be allowed? \\
+    \hline
+    Did you need additional assistance with the assignment? \\
+    \hline
+    Was the lecturer able to help you? \\
+    \hline
+    Were there sufficient resources available? \\
+    \hline
+    How could the assignment be improved? \\
+    \hline
+    \emph{For further comments, please use the reverse of this page.} \\
+    \hline
+  \end{tabular}
+  
+\end{titlepage}
+\newgeometry{total={6in, 8in}}
+
+\clearpage
+
+
+\tableofcontents
+
+\clearpage
+\addcontentsline{toc}{section}{List of Figures}
+\section*{}
+\listoffigures
+\clearpage
+
+%INTRODUCTION
+\addcontentsline{toc}{section}{Introduction}
+\section*{Introduction}
+Trading Companies are faced with a huge volume of documents coming from suppliers and consumers, which employees of the companies should store and work with. Commonly, these documents are created on various software and are spread on different devices, which could lead to complications in searching and collecting all these documents together. Collaboration and communication among workers could be affected by the geographical location. Therefore there is a need in a system, which could help employees to quickly access and share with data through an online workplace. 
+The report looks into creating a system using the Agile software approach.
+\newpage
+%REQUIREMENTS SPECIFICATION
+\section{Requirements Specification} 
+    \label{requirementsSpecification}
+    Requirements Specification is a list of features that the user expects. The whole process is divided into several steps. Firstly, the developer should create a list of questions and based on the answers, the requirement specification should be fulfilled by user stories to show to a customer.
+    
+    \subsection{Product Overview}
+       The customer requires to develop a system to control the workflow between two departments. The main reason for this decision from the customer side was ineffective documentation of the processes among employees of the departments. As a result, the management was forced to hire a specialist to document all data transfers among employees. \\
+       The application should provide functionality for Customer Support, who is responsible for collecting data from the customer and for creating a Transport Request, which is sent to the Logistics Department, who gets the required information for determining the suitable Transport Provider. \\
+       One of the key requirements of the system is to have functionality for the Customer Support to change any properties in the Transport Request dynamically and for a Logistics Department to learn about changes promptly. Moreover, the opposite may occur, and Customer Support should appropriately respond to the changes that occurred during transportation. \\
+       In case of the success of transportation, the Logistics Department should be able to report back to Customer Support, which afterward verifies the report and closes the request. 
+       
+       
+    \subsection{Questions and Answers}
+    
+   The project specification caused several issues about the purpose of the application. Therefore, a list of possible questions was created during the discussion in the class. Since both departments have separate constraints, the questions were divided into three parts:
+    \begin{enumerate}
+        \item Questions to Customer Support
+        \item Questions to Logistics Department
+        \item  Questions to both departments.
+    \end{enumerate}
+   Subsequently, these questions were sent to a customer and based on the given answers, the list of customer’s requirements was formulated and written to the backlog.
+  In some cases, there were still questions that appeared during the process, so a list of assumptions was made about the functionality of some parts that will be negotiated with the customer.
+    
+        \begin{longtable}[c]{|p{.45\textwidth}|p{.45\textwidth}|}
+           \caption{Questions for Customer Support}
+        \label{customerSupportQuestions} \\
+        \hline
+            Question & Answer \\
+            \hline
+            \endhead
+           How Customer support gathers all the required information about the good? & All the information must be filled by an employee of Customer Support as they gather it. \\
+            \hline
+           Which information does the Customer Support should get from the customer? & 
+           a) Delivery \newline 
+           b) Product Specification \\
+           \hline
+           What is the address specification? How much detailed it should be? & 
+           a. Required fields \newline 
+           1) Name of the company \newline 
+           2)Street and number \newline 
+           3)City, district, Country \newline 
+           b. Each customer may have multiple destination addresses, and they may vary over time \\
+           \hline
+            For Customer Support, what are the checking requirements? &
+            a. Customer Support must ensure the goods are available at given warehouse \newline
+            b. Customer Support must verify loading and delivery addresses \newline 
+            c. Customer Support must check All the information about product specification as given by Customer Support \\
+            \hline
+     
+    \end{longtable}
+
+    
+   
+        \begin{longtable}[c]{|p{.45\textwidth}|p{.45\textwidth}|}
+           \caption{Questions for Logistics Department}
+        \label{logisticsDepartmentQuestions} \\
+        \hline
+            Question & Answer \\
+            \hline
+            \endhead
+            How will the Logistics Department track the good?  & Sometimes the Logistics Department requests that the Transportation Provider (Delivery Service) will proactively inform them when a certain action has happened \\
+            \hline
+            How the Logistics Department should confirm the success of transportation and determine if there are any problems with the product & 
+            a. The Transportation Provider sends an invoice for completed delivery (a few days later usually) \newline
+            b. It is desirable that the information about completing the delivery is in the system as soon as possible \newline
+            c. Another option: the customer complains they didn’t get the goods and someone at the Logistics Department checks manually what is going on\\
+            \hline
+     
+    \end{longtable}
+    
+  
+        \begin{longtable}[c]{|p{.45\textwidth}|p{.45\textwidth}|}
+          \caption{Questions for both departments}
+        \label{questionsForBothDepartments} \\
+            \hline
+            Question & Answer \\
+            \endhead
+            \hline
+            Which form of authentication will be used for employees of both departments & 
+            a. Username and password \newline
+            b. Optionally AD/LDAP backend \\
+            \hline
+            Will there be any limitations for a customer to make changes of any attributes or to cancel the transport request only until a certain time after the shipment of goods? & No limitations are enforced; most of the attributes can change anytime. \\
+            \hline
+            In case of damage, which department will handle the request and how the customer should proof the damage? & 
+            a. The customer contacts Customer Support \newline
+            b. The Customer Support notifies Logistics Department, and together they have to decide about the course of action \\
+            \hline
+      
+    \end{longtable}
+
+
+    \newpage
+    
+    \subsection{User Stories} 
+    
+    User stories are the approach used in Agile software development to specify the interaction between the end-user and the system. The user story determines who will use the system, what the user needs, and why. According to \cite{beck2001planning}, "A user story is a chunk of function that makes sense to the customer, and is small enough that you can do several in one iteration." User stories should specify the piece of functionality, not in detail, but what is expected. 
+    
+    User stories are divided into three elements: title, value statement, acceptance criteria. The title is used for the client to specify particular user stories from others. The value statement indicates who will use the product and what should be achieved. The User story can be described according to the following rule: As a <user>, I want <feature>, so that <benefit> (\cite{pandit2015agileuat}).
+    
+    The acceptance criteria, on the other hand, defines when the user story is fulfilled. Moreover, sometimes, they can be written as test cases or as a description of a user story. The acceptance criteria can be defined using three keywords :
+    \begin{itemize}
+        \item \emph{Given} - the beginning of the event.
+        \item \emph{When} - specific action that happens during the event.
+        \item \emph{The} - the outcome of the event.
+    \end{itemize}
+     
+    Based on the answers of the customer, the user stories were divided into four parts: user stories for  Customer Support, user stories for Logistics Department, user stories for Admin, user stories for all users. 
+        
+        \begin{longtable}[c]{|p{0.5cm}||p{.90\textwidth}|}
+          \caption{User Stories for all type of users}
+            \label{userStoriesForAllTypeOfUsers} \\
+            \hline
+             \# & User Story    \\
+             \hline
+             \endhead
+              1 & 
+                 \textbf{Title:} Login   \newline
+                 \textbf{Value Statement:} As a user I want to login into the system, so I can access my account. \newline
+                  \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user has navigated to the login page.  \newline 
+                 \emph{When} valid username and password are entered. \newline
+                 \emph{Then} The user should be forwarded to the main page. \newline
+                  \textbf{Acceptance Criteria:}
+            \\
+             \hline
+               2 & 
+                 \textbf{Title:} Logout   \newline
+                 \textbf{Value Statement:}  As a user, I want to logout from the system, so I can secure my account If I change device.\newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user already logged into the system.\newline 
+                 \emph{When} user clicks the "Logout" button. \newline
+                 \emph{Then} the user is forwarded to the login page.
+                 
+                 \\
+                 \hline
+          
+        \end{longtable}
+        
+               \begin{longtable}[c]{|p{0.5cm}||p{.90\textwidth}|}
+                   \caption{User stories for Customer Support}
+                    \label{customerSupportUserStories} \\
+            \hline
+            \# & User Story  \\
+            \hline
+            \endhead
+             1 & \textbf{Title:}  View all transport requests  \newline
+                 \textbf{Value Statement:} As a user, I want to see the table of all transport requests on the main page. \newline
+                  \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that there are transport requests in the system.\newline 
+                 \emph{When} the user enters username and password and logs in to the system \newline
+                 \emph{Then}  The user is forwarded to the main page, and the table of opened transport requests appears.
+             
+            \\
+             \hline
+             2 & \textbf{Title:}  Search for transport requests  \newline
+                 \textbf{Value Statement:} As a user, I want to be able to search for transport requests in the search engine so that I can find required transport requests faster. \newline
+                   \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user has navigated to the main page \newline 
+                 \emph{When} the user selects property to search for and enters information into a search box.\newline
+                 \emph{Then} all relevant transport requests appear in the table.
+             
+            \\
+             \hline
+              3 &
+                 \textbf{Title:}  Create transport request  \newline
+                 \textbf{Value Statement:} As a user, I want to create the transport request, so that I can send the information to the Logistics Department.  \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is on the main page.\newline 
+                 \emph{When} the user clicks the "Create" button and fills the form with the necessary information. \newline
+                 \emph{Then} The data is saved in the database, and the message notifying about a successful operation is displayed. \newline
+                 \emph{Then} the status of the request is changed to "Processing".
+            \\
+              \hline
+              4 &
+                 \textbf{Title:}  Details of transport request  \newline
+                 \textbf{Value Statement:} As a user, I want to see details of the transport request, so I can view detailed information about the transport request.  \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} the there are transport requests in the system.\newline 
+                 \emph{When} user clicks "Details" button \newline
+                 \emph{Then} the user is forwarded to the details page and sees detailed information about the transport request.\\
+              \hline
+              5 & 
+                 \textbf{Title:} Edit transport request  \newline
+                 \textbf{Value Statement:} As a user, I want to change the details of the transport request, so that the information can stay relevant.  \newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is in the details page \newline 
+                 \emph{Given} that the user can't change values of fields, that were created by the Logistics Department \newline 
+                 \emph{When} user changes the values of selected properties and clicks the "Save" button. \newline
+                 \emph{Then} new information should be saved in the database, and the message notifying about the successful operation should be displayed to the user. \newline
+                 \emph{Then} the status of the request is changed to "Edited".
+
+                           \\
+               \hline
+             6 & 
+                 \textbf{Title:} Add several addresses  \newline
+                 \textbf{Value Statement:} As a user, I want to add several destinations for the product, so that there could be multiple spots of delivery.  \newline
+                 \emph{Given} that the user is in the details page. \newline 
+                 \emph{When} user clicks the "Add address" button.  \newline
+                 \emph{Then} new form with address specification to fill in appears in the page.
+                           \\
+               \hline
+              7 & 
+                 \textbf{Title:}  Cancel transport request   \newline
+                 \textbf{Value Statement:}  As a user I can request for order cancellation of the transport request, so I can inform the Logistics department about the order rejection. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is in the details page.\newline 
+                 \emph{When} the user clicks the "Cancel" button.\newline
+                 \emph{Then} the status of the request is changed to "Processing cancellation". 
+                \\
+            \hline
+          
+             8 & 
+                 \textbf{Title:} View Reports   \newline
+                 \textbf{Value Statement:} As a user, I can view all delivery reports coming from the Logistics Department, so I can complete the transport request. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that there are reports in the system.\newline 
+                 \emph{When} user selects clicks the "Reports" button on the main page.\newline
+                 \emph{Then} The user is forwarded to the reports page and views the table of all reports.
+             \\
+             \hline
+             9 & 
+                 \textbf{Title:}  Complete transport request   \newline
+                 \textbf{Value Statement:}  As a user, I want to complete the transport request in case of successful delivery, so I can remove it from the table of opened transport requests. \newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is in the reports page\newline 
+                 \emph{When} user selects specific report and clicks the "Details" button\newline
+                 \emph{When} user clicks the "Complete" button in the Details section.\newline
+                 \emph{Then} the status of the transport request is changed to "Completed" and the transport request is saved in the history of transport requests. \newline
+                 \emph{Then} the message notifying about the successful operation is displayed.                          \\
+             \hline
+             10 & 
+                 \textbf{Title:} View History   \newline
+                 \textbf{Value Statement:}  As a user, I want to see details of closed transport requests so that I can find the necessary information about the finished transport request. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that there are closed transport requests in the system.\newline 
+                 \emph{When} the user clicks the "History" button on the top right corner of the page.\newline
+                 \emph{Then} The user is forwarded to the history page and views the table of closed transport requests.
+                \\
+                \hline
+           
+    
+        \end{longtable}
+  
+        
+        \begin{longtable}[c]{|p{0.5cm}||p{.90\textwidth}|}
+             \caption{User Stories for Logistics Department}
+        \label{LogisticsDepUserStories} \\
+            \hline
+             \# & User Story    \\
+             \hline
+             \endhead
+             1 &
+                 \textbf{Title:}  View transport requests  \newline
+                 \textbf{Value Statement:} As a user, I want to see the table of all opened transport requests, so I can continue filling out the transport request. \newline
+                 \textbf{Acceptance Criteria:} \newline
+                  \emph{Given} there are transport requests in the system.\newline 
+                 \emph{When} the user enters the main page. \newline
+                 \emph{Then} the user can see the table of all transport requests coming to the system.
+                 
+              \\
+               \hline
+               2 & \textbf{Title:} Search transport request  \newline
+                 \textbf{Value Statement:}  As a user, I want to search for the transport request, so that I can find required transport requests faster.  \newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is on the main page. \newline 
+                 \emph{When} user selects the property to search for and fills in the data in search engine and presses the "Search" button. \newline
+                 \emph{Then} the transport request that the user is searching for appears in the table. 
+                 
+            \\
+              \hline
+              3 & 
+                 \textbf{Title:}  Details of Transport Request  \newline
+                 \textbf{Value Statement:} As a user, I want to see details of transport request sent from Customer Support, so I can find more information about the transport request.  \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that there are transport requests in the database.\newline 
+                 \emph{When} user clicks the "Details" button. \newline
+                 \emph{Then} all fields related to the transport request will be displayed. 
+               \\
+               \hline
+              4 & 
+                 \textbf{Title:} Add Transport Details.  \newline
+                 \textbf{Value Statement:} As a user, I want to add transport details information to the existing transport request, so I can supplement the details of the order. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the transport request exists in the system. \newline 
+                 \emph{When} user clicks the details button. \newline
+                 \emph{Then} user can fill in necessary information about the transport request.                \\
+             \hline
+              5 & 
+                 \textbf{Title:} Edit Transport Details.  \newline
+                 \textbf{Value Statement:} As a user, I want to be able to edit transport information in the transport request \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is in the details page \newline 
+                 \emph{Given} that the user can't change values of fields, that were created by the Customer Support \newline 
+                 \emph{When} user changes values of selected properties and clicks the "Save" button \newline
+                 \emph{Then} new information should be saved in the database, and the message notifying about the successful operation should be displayed to the user. \newline
+                 \emph{Then} the status of the request is changed to "Edited".
+                 
+                \\
+             \hline
+              6 & 
+                 \textbf{Title:} View Reports  \newline
+                 \textbf{Value Statement:} As a user, I want to see the list of reports, so I can be aware of every report that was created in the system.
+                 \newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that there are reports in the system. \newline 
+                 \emph{When} user clicks the "Reports" button. \newline
+                 \emph{Then} the list of reports is shown to the user.\\            
+            \hline
+              7 & 
+                 \textbf{Title:} Create Report  \newline
+                 \textbf{Value Statement:} As a user, I want to be able to create a delivery report to the Customer Support so that they can cancel the request in case of successful delivery.
+                 \newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user navigates to the main page. \newline 
+                 \emph{When} the user clicks the "Create" button and fills the form with necessary information.\newline
+                 \emph{Then} the report should be created in the database, and a message of a successful operation is displayed to the user.
+                \\            
+ 
+             \hline
+               7 & 
+                 \textbf{Title:} Missing Information \newline
+                 \textbf{Value Statement:}   As a user, I want to be able to inform Customer Support about an insufficient amount of data so that I can get more information about the transport request.
+                 \newline
+                 \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user should be in the details page \newline 
+                 \emph{When} user clicks the "Missing Information" button and fills the form that appears on the window. \newline
+                 \emph{Then} the report should be created in the database, and a message of a successful operation is displayed to the user.
+                  \emph{Then} the status of the request is changed to "Missing Information".
+                \\            
+             \hline
+              8 & 
+                 \textbf{Title:} View History   \newline
+                 \textbf{Value Statement:}  As a user, I want to see details of closed transport requests so that I can find the necessary information about the transport request. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that there are closed transport requests in the system.\newline 
+                 \emph{When} the user clicks the "History" button on the top right corner of the page.\newline
+                 \emph{Then} The user is forwarded to the history page and views the table of closed transport requests.
+                \\
+                \hline
+             9 & 
+                 \textbf{Title:}  Confirm Transport request cancellation   \newline
+                 \textbf{Value Statement:}  As a user I want to confirm the cancellation of the transport request, so the transport request could finally be added to the list of inactive transport requests. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the user is in the details page.\newline 
+                 \emph{When} the user clicks "Confirm cancellation" button.\newline
+                 \emph{Then} the "status" field in the database is changed to "Cancelled".                \\
+                 
+            \hline
+            
+   
+        \end{longtable}
+        
+  
+
+        \begin{longtable}{|p{0.5cm}||p{.9\textwidth}|}
+          \caption{User Stories for Admin}
+        \label{AdminUserStories} \\
+              \hline
+            \# & User Story  \\
+            \hline
+            \endhead
+
+             1 & \textbf{Title:}  Create Accounts  \newline
+                 \textbf{Value Statement:} As a user, I want to create accounts, so employees can log into the system. \newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the username is unique.\newline 
+                 \emph{When} the user fills the form and clicks the "Create" button.\newline
+                 \emph{Then} the new account should be saved in the database and the message notifying about the successful operation is displayed.
+                \\            
+            \hline
+             2 & \textbf{Title:}  Delete Account  \newline
+                 \textbf{Value Statement:} As a user, I can delete the account, so I can secure the system from forbidden access to the system.\newline
+                \textbf{Acceptance Criteria:} \newline
+                 \emph{Given} that the account exists in the system.\newline 
+                 \emph{When} the user clicks the "Delete" button.\newline
+                 \emph{Then} the "status" property in the database is changed to "Disabled" and the message notifying about the successful operation is displayed   \\
+            \hline
+             3 & \textbf{Title:}  Search Accounts  \newline
+                 \textbf{Value Statement:} As a user, I can search for the accounts, so I can find necessary  account faster.  \newline
+                 \textbf{Acceptance Criteria:} \newline
+                  \emph{Given} that the account exists in the system.\newline 
+                 \emph{When} the user enters data into the search engine .\newline
+                 \emph{Then} the relevant accounts appear in the table.  \\
+            \\
+            \hline
+    \end{longtable}
+    
+   \newpage
+
+    
+%Rapid Development Methods
+\section{Rapid Application Development Methods}
+     
+     \label{rapidApplicationDevMethods}
+     Rapid Application Development is an Agile software development approach that focuses on rapid prototyping and getting quick feedback from the customer. RAD gives feasibility for a developer team to make multiple iterations and updating software during the process. RAD approach was created as a response to the obstacles in the Waterfall methodology among developers. 
+     
+     According to \cite{degrace1990wicked} cited in \cite{sutherland2004agile}, waterfall methodology is unsuitable for changes during the development cycle. Besides, lack of customer interaction with a development team in the waterfall makes the development process even harder, because requirements are not fully specified before the project. RAD has four main steps to follow: requirements specification, prototyping, feedback receiving, and software finalization. 
+    
+    In the first step, the development team and a customer should determine system requirements to be able to begin prototyping. Once developers got all specifications from the customer, they can start to develop a prototype of specific functionality and iteratively presenting to the customer. \\
+  
+    \subsection{Agile methodologies}
+    Agile software has a range of development frameworks, which include Agile Scrum Methodology, Crystal, Extreme Programming, etc. As \cite{stoica2016analyzing} stated, "there is no "absolute best" agile development methodology, each project is bringing its own goals and requirements." Still, overall Agile software helps companies to increase the number of new clients and income by decreasing the time to develop a product.
+    \subsubsection{Scrum Agile Development}
+    According to \cite{schwaber2004agile}, there are three main roles in Scrum development: ScrumMaster, the Team, and the Product owner. 
+    
+    ScrumMaster manages the development process flow and ensures that all Scrum rules and values are performed properly. The Team is responsible for implementing the functionality specified in the backlogs. The Product Owner creates overall requirements for the project. In Scrum development process is broken into several steps, such as Daily Scrum Meetings, Sprint Planning Meeting, Sprint Review Meetings. During Daily Scrum Meetings takes around 15 minutes to discuss what developers did yesterday and what they will do today. Sprint Planning takes place once a month, where the Development Team and the Product Owner reviews new assignments for the next Sprint. Sprint Review Meetings occur at the end of each Sprint, where the stakeholders could evaluate completed tasks. 
+    
+    \cite{cho2008issues} reported the interview that was carried to investigate challenges that are encountered with companies that are using the Scrum framework. Developers during interviews agreed that Scrum helps Teams to communicate and to share with obstacles that team members have encountered. However, like many Agile methodologies, Scrum has a limited amount of documentation, and sometimes this leads to a misunderstanding of tasks among developers. Thus, Scrum methodology is best suited for projects that don't have predefined precise requirements, which could be dynamically changed during the process.
+  
+    
+    
+    \begin{figure}[H]
+    \centering
+     \includegraphics[width=.5\textwidth]{images/scrum.png}
+     \label{scrumDevelopmentProcess}
+     \caption{Scrum Development Process}
+    \end{figure}
+    
+    \subsubsection{Crystal Methodology}
+    The main reason for describing this methodology is to show the different approaches to software development in comparison with Scrum. Crystal Methodology encourages to focus mostly on people rather than on choosing different techniques during the development process \cite{kumar2012impact}. Crystal Methodology was developed by Alistair Cockburn in 1991 when he was told to create a new software approach for object-oriented projects. 
+    
+    As a result, Cockburn discovered that many companies don't follow specific software methodology, but most of them have shared the same values, such as team collaboration, quick access to the user. Moreover, Cockburn discovered the changes in project properties depending on the number of people in the project. Due to that, Cockburn developed different methods for development, depending on the number of people involved in the team. These methods are distinguished by colors that indicate "weight" of methodology.
+
+    \begin{figure}[H]
+     \includegraphics[width=\linewidth]{images/crystal.png}
+     \centering
+     \caption{Crystal Methods differentiation}
+     \label{crystalMethods}
+    \end{figure}
+    
+    The current application may be part of projects that use Crystal Clear methodology. Crystal Clear mostly consists of a small number of people in a team (approximately eight people). The main goal of this method is to create non-critical business applications by following seven main principles: 
+    \begin{itemize}
+        \item Frequent Delivery. The development team should constantly show something to a customer and to get feedback. Otherwise, there could be a possibility not to understand what the client wants.
+        \item Reflective Improvement. The development team should always cooperate and evaluate the ideas of each member.
+        \item Osmotic Communication. The team should work in the same room because a team member can get relevant information, even if he does not listen to a conversation directly.
+        \item Personal Safety. Team members should be able to speak and speak about their doubts about some decisions that were made.
+        \item Focus. The team leader should separate tasks based on the priorities and abilities of each team member. Hence each team member should work only on a given task and be distracted by others.
+        \item Easy Access To Expert Users. Developers should have direct access to the users and get their reviews about the application.
+        \item Technical Environment. The development team should create a comfortable environment for continuous integration and automated tests  (\cite{crystalclear}).
+    \end{itemize}
+    
+    Thus, Crystal Clear holds key principles that can be found in different methodologies and can be implemented by various teams. 
+    
+    \subsection{Prototyping}
+    Prototyping is a software development approach in which prototypes are created, tested until the end result is achieved from which the development process can be started. 
+    
+    \begin{figure}[H]
+     \includegraphics[width=.7\textwidth]{images/prototyping.png}
+     \centering
+    \caption{Prototyping Model}
+    \label{prototypingModel}
+    \end{figure}
+    
+     As claimed by \cite{carr1997prototyping}, the prototype model could be characterised by several steps. In the first stage, a development team questions the end-users to get detailed requirements for the system and what users are expecting from it. In the second phase, a draft design of a system is shown to a customer. After collecting the necessary data, the team starts developing the prototype. The prototype is not a complete version of the system but helps to determine overall functionality. During the evaluation, If the user is not satisfied with specific functionality, then the new requirements are specified. The last phase is not completed until all user conditions are met. The final step is the implementation of the system when the application is tested and deployed. 
+     
+     Based on the development team's goals and ways of implementation, there are a few types of Prototyping :
+     \begin{enumerate}
+         \item Rapid Throwaway  
+         \item Evolutionary
+         \item Incremental
+         \item Extreme
+     \end{enumerate}
+
+    \subsubsection{Throwaway Prototyping}
+     Throwaway Prototyping or Rapid Throwaway is an approach in software development that is used when the customer is not confident with specifications, and a development team needs to understand the notion or feature of the system. Frequently this method is used in a quick design phase when the customer has different approaches that are still in consideration. In this case, several throwaway prototypes are created and are shown to the customer. 
+     
+     The main point in Throwaway Prototyping is that these prototypes are discarded and may not be included in the system because they are used for acquiring knowledge and reducing the amount of risk during the development process. However, this method could increase the amount of time spent on developing prototypes because there could be no clear stop point for the customer during specifications creation.
+    
+    \subsubsection{Evolutionary}
+   Evolutionary Prototyping is a software method, which main goal is to build a prototype for getting customer feedback and adjusting it until a final project develops. As reported by Harris(2018), the Evolutionary approach can be used in Artificial Intelligence or research projects where specifications are uncertain.
+   For instance, It can be used for a speech recognition application, where development can be started with a small amount of dictionary and to improve it steadily.
+    
+    \subsubsection{Incremental}
+    In the Incremental model, the project is decomposed into smaller chunks, and prototypes are created for each of them. During the last steps, all prototypes are merged into the final project. 
+    
+    The principal contrast between Incremental and Iterative approach is that Incremental model has predefined actions that have to be taken from the beginning until the end of the project. These steps include design, implementation, testing, maintenance. One of the most popular Incremental approaches is the Waterfall Model. On the other hand, the Iterative approach, such as the Agile method, does not have distinct steps and development is done in cycles.
+    
+
+    \subsubsection{Extreme}
+    The main idea behind Extreme Prototyping is that all prototypes are built-in HTML format and integrated into the final project. 
+
+    In comparison with the RAD model, Prototyping is oriented for building projects, even with a small volume of artifacts because user requirements can be refined later during the process. Also though RAD model encourages user engagement, but the interaction between a team and a customer occurs only at the beginning of the process, in contrast with Prototyping, which has high user involvement. \\
+    
+    Overall, the Prototyping Model is useful when there are no time restrictions from the client side because it is not oriented for creating projects in a short period. 
+    Due to this, RAD is more suitable for creating the current project because the application is divided into several components and developed parallel. This approach helps to diminish the time spent on developing the product, and as a result, developers can quickly get reviews from a customer.
+    
+    \newpage
+
+    \subsection{Tools and procedures}
+    
+   The most suitable method for the development of the current application has become Scrum Agile Software because each class meeting can be defined as a sprint for determining what was achieved and the tasks to finish in the next sprint.
+   
+   As determined by \cite{lehtovirta2017managing}, Scrum adds new rules on how development should be processed in a short period of time. Every cycle, the Scrum Master and the product owner determine goals for the next cycle. These cycles are called sprints. During each Sprint, the management determines which task should be added to a product backlog.  Then, based on the content of the backlog, User Stories are designed and broken into smaller tasks. 
+   
+   \textbf{Kanban} is a framework that is frequently used in agile software development. All components in kanban are represented visually on the kanban board, allowing teams to update the state of the project.
+   
+    \subsubsection{ Tool to be used}
+    GitLab Agile Delivery enables the management team to implement agile practices to plan and maintain their work. Moreover, it gives feasibility to add Agile as a part of a project, enabling collaboration of the development and management team. It allows the team to share with proposals and doubts before or during the development. The issues usually are a set of user stories with a priority, coming from the backlog that should be designed and implemented. 
+    
+    GitLab provides an Issues Board that follows the kanban model and promptly helps to generate and track the issues during the development. Such a Tool helps to visualise overall workflow and to organise tasks by priorities. 
+    
+    \subsubsection{Development Plan}
+    Using GitLab Projects management capabilities, the initial development process was divided into several steps:
+    \begin{enumerate}
+        \item To Formulate questions.
+        \item To Create a product backlog.
+        \item To Create Frontend tasks.
+    \end{enumerate}  
+   
+   Figure \ref{kanbanBoard} consists of three boards: questions and answers, backlogs, front-end tasks. The main idea behind the Kanban board is to move tasks from left to right and assign them to a team. 
+   
+    \begin{figure}[H]
+        \centering
+     \includegraphics[width=\linewidth,]{gitlab/gitlab.png}
+    \caption{Gitlab Kanban board}
+    \label{kanbanBoard}     
+    \end{figure}
+    
+    Each board contains issues that contain information on a task to be done. A new issue is created by determining the title, description, to whom it will be assigned, and milestones. 
+       \begin{figure}[H]
+        \centering
+     \includegraphics[width=.5\textwidth,]{gitlab/issue.png}
+    \caption{Issue example in GitLab}
+    \label{issueExample}     
+    \end{figure}
+
+    The process begins with data collecting to define what exactly user needs and what should be implemented. Using Issues Board, the \emph{list of Questions and Answers} is created and filled with questions to the customer.
+    The next step is to create \emph{product backlog} based on gathered data. The product backlog is the list of tasks to be done, that consists of user stories, bugs, technical tasks. It is usually defined by the scrum team and is usually refined during each Sprint. The backlog list consists of a title and story description. Main requirements for the product backlog are:
+    \begin{itemize}
+        \item User stories must be sorted based on defined priorities and completed successfully. After that, the next task is taken from the queue until all stories are completed. 
+        \item User stories should be evaluated in the case of complexity. If a user story is difficult to understand, then it is divided into smaller ones.
+        \item Items in the product backlog should be detailed enough for a developer to work on the user stories independently. 
+    \end{itemize}
+    
+    After creating the product backlog, specific tasks for developers could be created. The development process is divided into the \emph{frontend and backend part}. Thus, tasks are divided separately with a list of tasks to the frontend and backend developers. 
+    
+    Frontend developers are responsible for creating a user interface that meets the user's expectations. Tasks can represent a bug fix, adding new functionality or changing the existing property.    
+    
+    \newpage
+%Detailed Model
+\section{System Architecture}
+    \label{systemArchitecture}
+    During the process, it is mandatory to understand the relationship between different components and how they act together. Use cases are introduced to represent the overall functionality of various elements in the application. 
+    
+    \subsection{Use case diagrams and specifications}
+    
+    A use case is a method to show a sequence of actions that are taken by the actor to interact with the system.
+    An actor is a person or organization that interacts with the system. As \cite{cockburn2000writing} stated that actors are divided into Primary Actors and Supporting Actors. Primary Actor is a stakeholder that uses the system to achieve a goal. Supporting Actor, on the other hand, is an external actor that provides specific service for the system. 
+
+    Customer Support, Logistics Department, and Admin interact with the system, so they are the main actors. The Supporting Actor will be the Transport Service, which the company needs to transport the goods. 
+    
+    However, the use case diagram is not enough to completely reveal a picture of the user's actions. Thus, each use case should be followed with the use case specification, explaining the main goal of the use case and what are conditions to trigger the event. \emph{Use case specification} is a textual representation of a use case and contains the following fields: 
+        \begin{enumerate}
+            \item Use case name
+            \item Actor(s)
+            \item Description
+            \item Pre-condition
+            \item Post-condition(s)
+            \item Basic Paths
+            \item Alternative Paths
+        \end{enumerate}
+    
+    The Figure \ref{UseCaseUserManagement} represents the process of user management in the system. Because the described system is internal, all accounts operations should be performed by Admin,
+    \begin{figure}[H]
+     \centering
+     \includegraphics[width=.6\textwidth]{images/useCases/usermanagement.png}
+     \caption{Use case for a User Management}
+     \label{UseCaseUserManagement}
+    \end{figure}
+  
+      \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification to Login and Logout}
+        \label{LoginAndLogoutUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Login and Logout\\
+         \hline
+         \textbf{Actor(s)} & Customer Support, Logistics Department,Admin \\
+         \hline
+         \textbf{Description} & All users logs into the system and access the main page; All users can logout from the system. \\
+         \hline
+         \textbf{Pre-Conditions} & The user should have valid credentials. \\
+         \hline
+        \textbf{Post-Condition(s)} &  The user is forwarded to the main page.\\
+         \hline
+         \textbf{Basic Paths} & 
+         \begin{itemize}
+             \item The user navigates to the login page.
+             \item System displays a login form to fill in.
+             \item The user fills in username and password.
+             \item System forwards the user to the main page.
+             \item The user clicks the "Logout" button on the top right corner of the website.
+             \item System forwards the user to the login page.
+         \end{itemize} 
+       \\
+        
+      \hline
+    \textbf{Alternative Paths} & Username or password is invalid.
+        \begin{itemize}
+            \item System shows error message and asks to try again.
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+
+
+      \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification to create account}
+        \label{createAccountUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Create Account\\
+         \hline
+         \textbf{Actor(s)} & Admin \\
+         \hline
+         \textbf{Description} & Admin creates the account, which employee can use to access the system. \\
+         \hline
+         \textbf{Pre-Conditions} & The username should be unique. \\
+         \hline
+        \textbf{Post-Condition(s)} & The new account is created.\\
+         \hline
+         \textbf{Basic Paths} &
+         \begin{itemize}
+             \item The admin clicks the "Create" button.
+             \item System shows the form to fill in.
+             \item The admin fills in the form and clicks the "Save" button.
+             \item System confirms that the account was created.
+         \end{itemize} 
+       \\
+         
+      \hline
+    \textbf{Alternative Paths} & Username already exists.
+        \begin{itemize}
+            \item System shows error message and asks to write another username.
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+    
+      \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification to delete account}
+        \label{deleteAccountUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Delete Account\\
+         \hline
+         \textbf{Actor(s)} & Admin \\
+         \hline
+         \textbf{Description} & Admin deletes account in case account is no longer used. \\
+         \hline
+         \textbf{Pre-Conditions} &  Account exists in the system.\\
+         \hline
+        \textbf{Post-Condition(s)} & System changes the status of the field in database to "Disabled". \\
+         \hline
+         \textbf{Basic Paths} & 
+         \begin{itemize}
+             \item The admin clicks "Delete" button.
+             \item System shows a window asking if the user is confident in his actions.
+             \item The user confirms the action.            
+             \item System confirms that the account was deleted.
+         \end{itemize} 
+       \\
+        \hline
+    \end{longtable}
+    
+    
+      \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+         \caption{Use case specification to view accounts}
+        \label{viewAccountsUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+        \endhead
+         \textbf{Use Case Name} & View and search for accounts\\
+         \hline
+         \textbf{Actor(s)} & Admin \\
+         \hline
+         \textbf{Description} & Admin can view all accounts or can search by some property. \\
+         \hline
+         \textbf{Pre-Conditions} & There are accounts in the system. \\
+         \hline
+        \textbf{Post-Condition(s)} & System returns final result based on the search criteria. \\
+         \hline
+         \textbf{Basic Paths} & 
+         \begin{itemize}
+             \item Admin logs into the system.
+             \item System displays a table of all accounts in the system.
+             \item Admin filters account by a specific field.
+             \item Admin populates the search box with relative text.
+             \item System returns all results.
+         \end{itemize} 
+       \\
+         
+      \hline
+    \textbf{Alternative Paths} & The search have not found anything.
+        \begin{itemize}
+            \item System shows message notifying that 0 results were found.
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+    
+    
+     \begin{figure}[H]
+     \centering
+     \includegraphics[width=.7\textwidth]{images/useCases/ordermanagement.png}
+     \caption{Use case for Transport Request Management}
+     \label{transportrequestManagementUseCase}
+    \end{figure}
+    
+    As Figure \ref{transportrequestManagementUseCase} shows, the Transport Request Management is divided into several use cases between the Customer Support and Logistics Department. 
+    
+    Furthermore, both actors can view and edit the transport request. However, the use case shows that not all operations are allowed for the Logistics Department, namely canceling, and completing the transport request. Thus, the use case helps to create clear boundaries of the responsibilities of each actor.
+ 
+    The detailed functionality of each use case is described below.
+
+    \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+          \caption{Use case specification for searching the Transport Request}
+        \label{transportRequestSearchingUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & View and Search Transport Requests \\
+         \hline
+         \textbf{Actor(s)} & Customer Support,Logistics Department \\
+         \hline
+         \textbf{Description} & The Customer Support and Logistics Department can see the table of all active transport requests and can search for the necessary transport request.   \\
+         \hline
+         \textbf{Pre-Conditions} & There are active transport requests in the system. \\
+         \hline
+        \textbf{Post-Condition(s)} & System returns transport requests to the user based on the search properties. \\
+         \hline
+         \textbf{Basic Paths} & 
+         \begin{itemize}
+             \item The user navigates to the main page.
+             \item System shows all active transport requests that are in the system.
+             \item The user filters transport requests by some property and populates a search box with relative text.
+             \item System returns results based on the search criteria.
+
+         \end{itemize} \\
+         
+      \hline
+      
+    \textbf{Alternative Paths} & The search have not found anything.
+        \begin{itemize}
+            \item System shows message notifying that 0 results were found.
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+    
+    
+
+    \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification to create the Transport Request}
+        \label{createTransportRequestUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Create Transport Request \\
+         \hline
+         \textbf{Actor(s)} & Customer Support \\
+         \hline
+         \textbf{Description} & The Customer Support creates a Transport Request based on the information given by the Customer and saves it for the further processing.  \\
+         \hline
+         \textbf{Pre-Conditions} & transport request information is prepared. \\
+         \hline
+        \textbf{Post-Condition(s)} & 
+        \begin{itemize}
+            \item User has created new transport request.
+            \item The status of the transport request has changed to "Processing".
+        \end{itemize} \\
+         \hline
+         \textbf{Basic Paths} & 
+         \begin{itemize}
+             \item The user logs into the system.
+             \item The user clicks a "Create" button below the table of transport requests.
+             \item System forwards the user to the details page.
+             \item The user fills the form with the necessary information.
+             \item The user clicks the "Save" button.
+             \item System confirms the request was created.
+         \end{itemize} \\
+      \hline
+      
+    \textbf{Alternative Paths} & User did not fill in mandatory fields: 
+        \begin{itemize}
+            \item System shows error "Please fill in all required fields".
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+    
+    
+      \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification for editing the Transport Request}
+        \label{editingTheTansportRequestUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Edit Transport Request \\
+         \hline
+         \textbf{Actor(s)} & Customer Support, Logistics Department \\
+         \hline
+         \textbf{Description} & The Customer Support and Logistics Department can change information given by the Customer or Transport Providers and save it, so each department could get up-to-date information about the request.   \\
+         \hline
+         \textbf{Pre-Conditions} & The transportation request should exist in the system. \\
+         \hline
+        \textbf{Post-Condition(s)} & 
+        \begin{itemize}
+            \item User has updated the transport request.
+            \item The status of the transport request has changed to "Edited"
+        \end{itemize} \\
+         \hline
+         \textbf{Basic Paths} & \textbf{For the Customer Support}
+         \begin{itemize}
+             \item The user clicks the "Details" button in the table of transport requests. 
+             \item The system opens a new page of detailed information about the request.
+             \item System deactivates fields that could be edited only by the Logistics Department.
+             \item The user fills in the form with the necessary information.
+             \item The user clicks the "Save" button.
+             \item System confirms the changes.
+         \end{itemize} 
+         \textbf{For the Logistics Department}
+         \begin{itemize}
+             \item The user clicks the "Details" button in the table of transport requests.
+             \item The system opens a new page of detailed information about the request.
+             \item System deactivates fields that could be edited only by Customer Support.
+             \item The user fills in the form with the necessary information.
+             \item The user clicks the "Save" button.
+             \item System confirms the changes.
+         \end{itemize} \\
+         
+      \hline
+    \textbf{Alternative Paths} & User did not fill in mandatory fields: 
+        \begin{itemize}
+            \item System shows error "Please fill in all required fields"
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+    
+    
+      \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification for cancelling the Transport Request}
+        \label{transport requestCancellationUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Cancel Transport Request \\
+         \hline
+         \textbf{Actor(s)} & Customer Support, Logistics Department \\
+         \hline
+         \textbf{Description} & The Customer Support sends the cancellation request in case of rejections of goods from the customer to the Logistics department. The Logistics Department can confirm the cancellation. \\
+         \hline
+         \textbf{Pre-Conditions} & The transportation request should exist in the system. \\
+         \hline
+        \textbf{Post-Condition(s)} & 
+        \begin{itemize}
+            \item User has updated the transport request.
+            \item The status of the transport request changed to "Cancelled".
+        \end{itemize} \\
+         \hline
+         \textbf{Basic Paths} & \textbf{For the Customer Support}
+         \begin{itemize}
+             \item The user clicks the "Details" button in the table of transport requests.
+             \item The system opens a new window of detailed information about the request.
+             \item The user clicks the "Cancel" button.
+             \item System shows a window asking if the user is confident in his actions
+             \item The user confirms the action.
+             \item System updates the status of the transport request to "Processing cancellation."
+             \item System confirms that the status of the request was updated.
+
+         \end{itemize} 
+         \textbf{For the Logistics Department}
+         \begin{itemize}
+            \item The user filters transport requests by status and views transport requests that are in the cancellation process.
+             \item The user clicks the "Details" button in the table of active transport requests.
+             \item System displays a message about the transport request cancellation and asks whether to confirm cancellation or not.
+             \item The user confirms cancellation.
+             \item System displays a message of the success cancellation.
+             \item System puts the transport request into the History section.
+         \end{itemize} \\
+         
+      \hline
+    \textbf{Alternative Paths} & The Logistics department haven't confirmed the cancellation
+        \begin{itemize}
+            \item The status of the request changes to the "Problem exists".
+            \item transport requests remain in the table of active transport requests until the Logistics Department does not confirm cancellation.
+        \end{itemize} \\
+        \hline
+    \end{longtable}
+    
+     \begin{longtable}{|p{.45\textwidth}|p{.50\textwidth}|}
+        \caption{Use case specification for completing the Transport Request}
+        \label{completeTheTransportRequestUseCase} \\
+        \hline
+        Use Case Specification  &  \\
+         \hline
+         \endhead
+         \textbf{Use Case Name} & Complete transport request \\
+         \hline
+         \textbf{Actor(s)} & Customer Support, Logistics Department \\
+         \hline
+         \textbf{Description} & The Logistics Department gets the delivery invoice from the Transport Provider and creates a report. Customer Support gets the report and completes the transport request. \\
+         \hline
+         \textbf{Pre-Conditions} & Logistics Department should get the invoice from Delivery Service \\
+         \hline
+        \textbf{Post-Condition(s)} & 
+        \begin{itemize}
+            \item User has completed the request.
+            \item The status of the transport request has changed to "Completed".
+        \end{itemize} \\
+         \hline
+         \textbf{Basic Paths} & \textbf{For the Logistics Department}
+         \begin{itemize}
+             \item The user receives the invoice. 
+             \item The user navigates to the main page.
+             \item The user clicks the "Create" button.
+             \item System shows a new page with the form to fill in .
+             \item The user fills in the form and clicks the "Save" button.
+             \item System confirms that the report was created.
+         \end{itemize} 
+         \textbf{For the Customer Support}
+         \begin{itemize}
+            \item The user navigates to the reports section.
+             \item System shows the table of reports.
+             \item The user clicks the "Details" button.
+             \item System shows a new page of detailed information about the report.
+             \item If the report confirms the success of the operation, the user clicks the "Complete transport request" button.
+             \item System shows a window asking if the user is confident in his actions
+             \item The user confirms the action.
+             \item System confirms that the transport request was completed.
+             \item System changes the status of the transport request to "Completed" and puts the transport request into the table with closed transport requests.
+         \end{itemize} \\
+         
+      \hline
+    \textbf{Alternative Paths} & The Customer Support will not confirm the cancellation
+        \begin{itemize}
+            \item The status of the request changes to the "Problem exists".
+            \item The transport requests remain in the table of active transport requests until the Customer Support will not confirm cancellation.
+        \end{itemize} 
+        \\
+        \hline
+    \end{longtable}
+    
+
+    \subsection{User interface sketches}
+   
+    User interface design is the possibility for a team to put their concepts and visions of how the product should look like, into the paper or software. In Agile development, user stories are followed by the design mock-ups. Creating user sketches is a beneficial method to obtain user feedback and to decide which design idea does not work before beginning the development process.
+    
+     \begin{figure}[H]
+     \centering
+     \includegraphics[width=\linewidth]{images/sketches/mainpage.png}
+     \caption{Main Page for the Customer Support and Logistics Department}
+     \label{mainPage}
+    \end{figure}
+    
+    As can be seen from Figure \ref{mainPage}, the main page comprises the navigation bar with three buttons: Reports, History and Logout, and the table of transportation requests. Each row in the table consists of the "Details" button that forwards the user to the new page with complete information about the request. Besides, the user can use a search box and, based on the selected field, to obtain required transport requests.
+    
+    The main page also has the "Create" button, which has various functionality based on the user's role. For Customer Support, it navigates to the new page with a form to fill in and to generate a new request. For the Logistics department, it opens a new page to create a new delivery report, as shown in Figure \ref{ReporPage}. 
+    
+    Furthermore, as described in Table \ref{customerSupportUserStories}, the user can see the features of the transport request. The details page shows two necessary information about the Product Specification and Transport Details. In the Product Specification section, the Customer Support can add several multiple address destinations by clicking the plus button, which creates different address form to fill in.
+    
+    The "\# Add Information" button displays a new form for the address specification. As Figure \ref{CSDetailsTransportReq} shows, the transportation details fields that start from the Service Provider property, can not be edited by Customer Support. Thus all fields are disabled.
+    
+     \begin{figure}[H]
+        \centering % <-- added
+        \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{images/sketches/CSProductSp.png}
+        \caption{ Details page for Customer Support}
+        \label{CSDetailsProductSp}
+    \end{subfigure}\hfil % <-- added
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{images/sketches/CSTransportD.png}
+        \caption{Details page for Customer Support}
+    \label{CSDetailsTransportReq}
+    \end{subfigure}\hfil % <-- added
+    \end{figure}
+    
+   The Details page for the Logistics Department looks similar, except the possibility to modify values of fields that were fulfilled by Customer Support or to cancel a request. However, it is feasible to populate transportation details fields and to send the request back to the Customer by clicking the "Missing Information" button.
+    
+      \begin{figure}[H]
+        \centering % <-- added
+        \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{images/sketches/LDProductSp.png}
+        \caption{ Details page for Logistics Department}
+        \label{LDDetailsProductSp}
+    \end{subfigure}\hfil % <-- added
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{images/sketches/LDTransportD.png}
+        \caption{Details page for Logistics Department}
+    \label{LDDetailsTransportReq}
+    \end{subfigure}\hfil % <-- added
+    \end{figure}
+    
+    
+       
+    To complete the order, the Customer Support navigates to the report details page and gets the information about the delivery. Based on the report, there could be two possibilities :
+    \begin{enumerate}
+        \item Customer Support decides to complete the Transport Request.
+        \item Customer Support decides to notify about the obstacle during the delivery.
+    \end{enumerate}
+    
+        
+     \begin{figure}[H]
+     \centering
+     \includegraphics[width=.9\textwidth]{images/sketches/report.png}
+     \caption{Create report page for Logistics Department}
+     \label{ReporPage}
+    \end{figure}
+    
+     \begin{figure}[H]
+     \centering
+     \includegraphics[width=.65\textwidth]{images/sketches/reportDetails.png}
+     \caption {Report Details page for Customer Support}
+     \label{ReporPageDetails}
+    \end{figure}
+    
+    
+    Moreover, because the system is internal, there is a need in Admin who can manage the accounts within the system. The Admin Panel in Figure \ref{adminPanel} consists of the table with all existed accounts. The number of users could vary, and sometimes It could be hard for the Admin to find the required account. Therefore, the flexible search will be added to the Admin Panel, and based on the field to search for, the Admin will be able to search for the user more conveniently. Besides, the Admin can delete or create the account by clicking corresponding buttons.
+     \begin{figure}[H]
+     \centering
+     \includegraphics[width=\linewidth]{images/sketches/admin.png}
+     \caption{Admin Panel page}
+     \label{adminPanel}
+    \end{figure}
+    
+ 
+    
+    \newpage
+    
+%Development Process
+    \subsection{Sprints summary}
+    
+    The overall process can be divided into sprints that were held during each class meeting with the group every week. Each sprint or class meeting was divided into several steps: 
+    \begin{enumerate}
+        \item On the first step, the class told what has been achieved and which problems the person has faced with. 
+        \item Further, the main goals for the current sprint were discussed. 
+        \item In the final phase, the main tasks were determined until the next sprint.
+    \end{enumerate}
+
+    \begin{longtable}{|p{.10\textwidth}|p{.70\textwidth}|}
+        \hline
+         & Sprint Overview \\
+         \hline
+        Sprint 1 & The first sprint consisted of the introductory material about the project. The information given by the customer was analysed. However, there were many doubts about the workflow of departments, so the questions to the customer were created. \\
+         \hline
+        Second 2 & During the second sprint, the customer answered the given questions. Based on the answers, the list of possible user stories and use cases was discussed with the lecturer.  \\
+        \hline
+        Sprint 3 & The System architecture was divided into a front-end and back-end development. Further, the tools for the front-end and back-end were selected, Bootstrap and Spring respectively. \\
+        \hline
+        Sprint 4 & Based on the user stories, the use cases and use case specifications were written and evaluated by the lecturer for the further development.\\
+        \hline
+        \caption{Sprints Summary}
+        \label{SprintsSummary}
+    \end{longtable}
+    
+    \subsection{Development Process}
+    System architecture design is a term that determines how the system should be organised and designed. In an Agile approach, the overall system architecture should be discussed during the early stages of development. 
+    The architecture of the current system could be described based on two main parts: Front-end and Back-end.
+    
+    \subsubsection{Front-end}
+    As \cite{godbolt2016frontend} stated, Front-end architecture is the person who designs, plans, and oversees the development of the website. By building the product, meaning that the Front-end architecture should explicitly specify how the product will look like and make as much convenient and transparent for a user as it is possible. Furthermore, after specifications were determined, the developer starts to write lines of code that should be accessible to test and adaptable to change. The oversight step involves the ability of the developer to make modifications and to implement new technologies in the future.
+    The main front-end tools are: HTML,CSS and JavaScript.
+    
+    HTML (HyperText Markup Language) is the spine of any web page. An HTML document is a text file that contains elements to define the structure of the document. The elements in HTML are enclosed by angle brackets.
+    
+    The valid HTML document contains following key elements, that should be in every document \cite{henick2010html}. The main elements are :
+    \begin{itemize}
+        \item Document declaration, which tells the web browser about the version of HTML.
+        \item The "html" tag, which defines the root of the document. 
+        \item The "head" tag that contains the information about the document, for instance, title, meta elements, scripts, links.
+        \item The "body" tag, which represents the content of the web page.
+    \end{itemize}
+    
+    CSS (Cascading Style Sheets) is a language that describes the style of the document and how the elements should be displayed.
+    
+    JavaScript is the programming language to create dynamic content and is conveniently integrated with HTML.
+    
+    There are a number of tools that can be used to create a responsive design. According to \cite{jain2015review}, based on the level of complexity of the web page, there are two types of frameworks to choose: simple frameworks and complete frameworks. The most popular complete framework among developers is Bootstrap. The reason for this is that Bootstrap provides a big amount of resources to choose from, such as tutorials, extensions. 
+    
+    Even though each framework has its strengths and powerful tools, based on the popularity, it was decided to choose Bootstrap as a base framework for a front-end development of the application. \\
+    
+    \textbf{Bootstrap} contains CSS and JavaScript design templates to create forms,buttons,links and other components. It was created by Mark Otto and Jacob Thornton at Twitter. In Scrum development, during the Sprint Review, a development team shows a Product Owner what they have accomplished during the sprint. Because each sprint does not last so long, usually from two to four weeks, It is desirable for a development team to choose a flexible framework that helps to deliver the project as fast as it is possible. Thus, Bootstrap is a powerful tool to speed up the development process.
+    
+    \subsubsection{Back-end}
+    In comparison with the Front-end that runs on the user's browser, the Back-end is the code that is written on the server-side. It is the technology that processes the incoming requests and sends the response back to the client. The data that is sent as a response can be in different formats, such as HTML file, JSON, or XML. JSON (JavaScript Object Notation) is a human-readable file format that consists of "key-value" attributes and array data types. It is introduced as a replacement for XML and is more convenient for reading and writing the objects. 
+    
+    The database is persistent storage to save data and is commonly used on the back-end side. Even though the database model is not discussed in the report, it is necessary to describe the ORM model to understand the overall picture of processes that happen on the back-end side. \\
+    
+    As claimed by \cite{barnes2007object}, there are two main concepts behind a big number of Web applications: OOP (Object-oriented programming) and RDBMSs (Relational database management system). On the one hand, in object-oriented programming, everything is organised around objects that contain data. On the other hand, the relational database is used to store data in a structured form. The ORM (Object-relational mapping) is used to connect these two related concepts and is a technique to implement the object-oriented paradigm to manipulate data. 
+    
+    Hibernate is one of the most popular ORM tools for Java programming and helps to map Java classes to database tables. Instead of SQL(Structured Query Language), it uses HQL (Hibernate query language) to create queries, which is object-oriented and does not depend on the database tables. Furthermore, ORM provides much convenient resource management, so the developer does not have to think about the database connections.
+    
+    However, according to \cite{ottinger2014beginning}, there may be different cases when it is more feasible to use the ORM technique, and sometimes it is more suitable to use a traditional approach to access the database directly.
+    
+    Hibernate is only one part of the back-end development. The other part is a framework to develop an application. The current application will be written with Spring Framework. It is a lightweight application that supports various frameworks, such as Hibernate, EJB, JSF. One of the most important modules in the Spring Framework is Spring MVC. 
+    
+    MVC is an architectural design pattern that divides the development of the application into three parts: model, view, and controller. The model represents data that is transferred between the view and controller. The view is the user interface logic of the application. Meanwhile, the controller receives the request and processes the business logic  (\cite{mak2008spring}).
+    
+    
+
+\clearpage
+
+\addcontentsline{toc}{section}{Conclusion}
+\section*{Conclusion}
+The purpose of the technical report was to break the development process into appropriate steps
+and work on them sequentially. Firstly, at the beginning of the process, the user’s requirements were defined in forms of user stories. This approach helped to take a closer look at the functionality of the system.
+
+After the conditions were specified, It was essential to examine Rapid application development methods in section \ref{rapidApplicationDevMethods} and which of them could be implemented into a project. As a result, the development process was more similar to a Scrum development, where each class meeting was divided into sprints.
+Further, the list of use cases and use case specifications were specified in section \ref{systemArchitecture}. Even though the database model was not described in the report, the user interface designs were added to show how the application will work. 
+
+
+\clearpage
+
+\addcontentsline{toc}{section}{References}
+\section*{}
+\printbibliography
+
+\end{document}
