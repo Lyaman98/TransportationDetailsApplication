@@ -17,6 +17,6 @@ learn about changes promptly.
 `To start the application please run IcaApplication.java in src/main/java/com/rad/ica and go to http://localhost:8080/account given URL**
 `
 
-Tapplication has been developed using Spring Boot Framework. Static components in Spring Boot are represented using Thymeleaf. In MVC architecture, objects
+The application has been developed using Spring Boot Framework. Static components in Spring Boot are represented using Thymeleaf. In MVC architecture, objects
 that are created using Controller methods are then forwarded to the resources managed by
 Thymeleaf.
